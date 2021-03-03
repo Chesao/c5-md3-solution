@@ -1,0 +1,18 @@
+<div ng-if="found.length>0 && found[0]">
+    <br><hr>
+    <h3>Menu Items ({{found.length}} items)</h3>
+    <ol class="row list-group">
+        <li class="col-lg-12 list-group-item" ng-repeat="item in found">
+            <div class="col-lg-2"><span class="glyphicon glyphicon-cutlery"></span> {{item.name}}</div>
+            <div class="col-lg-1">{{item.short_name}}</div>
+            <div class="col-lg-7">{{item.description}}</div>
+            <div class="col-lg-2">
+                <button ng-click="onRemove({index:$index});">Don't want this one!</button>
+            </div>
+        </li>
+    </ol>
+</div>
+
+<div class="row" ng-if="found.length==0">
+    <h3 class="col-lg-12">Nothing found</h3>
+</div>
